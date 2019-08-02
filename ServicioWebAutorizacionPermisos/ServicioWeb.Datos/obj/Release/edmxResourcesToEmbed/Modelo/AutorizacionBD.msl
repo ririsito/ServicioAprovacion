@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PermisosQCTConectionStoreContainer" CdmEntityContainer="PermisosQCTTEntities">
+    <EntitySetMapping Name="Permisos">
+      <EntityTypeMapping TypeName="PermisosQCTConection.Permisos">
+        <MappingFragment StoreEntitySet="Permisos">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdEmpleado" ColumnName="IdEmpleado" />
+          <ScalarProperty Name="FechaSalida" ColumnName="FechaSalida" />
+          <ScalarProperty Name="FechaSalidaReal" ColumnName="FechaSalidaReal" />
+          <ScalarProperty Name="HoraSalida" ColumnName="HoraSalida" />
+          <ScalarProperty Name="HoraSalidaReal" ColumnName="HoraSalidaReal" />
+          <ScalarProperty Name="FechaRegreso" ColumnName="FechaRegreso" />
+          <ScalarProperty Name="FechaRegresoReal" ColumnName="FechaRegresoReal" />
+          <ScalarProperty Name="HoraRegreso" ColumnName="HoraRegreso" />
+          <ScalarProperty Name="HoraRegresoReal" ColumnName="HoraRegresoReal" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
+          <ScalarProperty Name="Numero" ColumnName="Numero" />
+          <ScalarProperty Name="TipoPermiso" ColumnName="TipoPermiso" />
+          <ScalarProperty Name="Motivo" ColumnName="Motivo" />
+          <ScalarProperty Name="JefeInmediato" ColumnName="JefeInmediato" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Estados">
+      <EntityTypeMapping TypeName="PermisosQCTConection.Estados">
+        <MappingFragment StoreEntitySet="Estados">
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

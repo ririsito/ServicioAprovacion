@@ -1,0 +1,12 @@
+C:\Users\qctrzavala\source\repos\ServicioWebAutorizacionPermisos\ServicioWeb.Datos\bin\Release\ServicioWeb.Datos.dll.config
+C:\Users\qctrzavala\source\repos\ServicioWebAutorizacionPermisos\ServicioWeb.Datos\bin\Release\ServicioWeb.Datos.dll
+C:\Users\qctrzavala\source\repos\ServicioWebAutorizacionPermisos\ServicioWeb.Datos\bin\Release\ServicioWeb.Datos.pdb
+C:\Users\qctrzavala\source\repos\ServicioWebAutorizacionPermisos\ServicioWeb.Datos\bin\Release\EntityFramework.dll
+C:\Users\qctrzavala\source\repos\ServicioWebAutorizacionPermisos\ServicioWeb.Datos\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\qctrzavala\source\repos\ServicioWebAutorizacionPermisos\ServicioWeb.Datos\bin\Release\EntityFramework.xml
+C:\Users\qctrzavala\source\repos\ServicioWebAutorizacionPermisos\ServicioWeb.Datos\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\qctrzavala\source\repos\ServicioWebAutorizacionPermisos\ServicioWeb.Datos\obj\Release\ServicioWeb.Datos.csprojAssemblyReference.cache
+C:\Users\qctrzavala\source\repos\ServicioWebAutorizacionPermisos\ServicioWeb.Datos\obj\Release\ServicioWeb.Datos.csproj.CoreCompileInputs.cache
+C:\Users\qctrzavala\source\repos\ServicioWebAutorizacionPermisos\ServicioWeb.Datos\obj\Release\ServicioWeb.Datos.csproj.CopyComplete
+C:\Users\qctrzavala\source\repos\ServicioWebAutorizacionPermisos\ServicioWeb.Datos\obj\Release\ServicioWeb.Datos.dll
+C:\Users\qctrzavala\source\repos\ServicioWebAutorizacionPermisos\ServicioWeb.Datos\obj\Release\ServicioWeb.Datos.pdb

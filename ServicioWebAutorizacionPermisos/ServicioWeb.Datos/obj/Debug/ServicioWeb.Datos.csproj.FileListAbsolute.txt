@@ -1,0 +1,11 @@
+C:\Users\qctrzavala\source\repos\ServicioWebAutorizacionPermisos\ServicioWeb.Datos\bin\Debug\ServicioWeb.Datos.dll.config
+C:\Users\qctrzavala\source\repos\ServicioWebAutorizacionPermisos\ServicioWeb.Datos\bin\Debug\ServicioWeb.Datos.dll
+C:\Users\qctrzavala\source\repos\ServicioWebAutorizacionPermisos\ServicioWeb.Datos\bin\Debug\ServicioWeb.Datos.pdb
+C:\Users\qctrzavala\source\repos\ServicioWebAutorizacionPermisos\ServicioWeb.Datos\bin\Debug\EntityFramework.dll
+C:\Users\qctrzavala\source\repos\ServicioWebAutorizacionPermisos\ServicioWeb.Datos\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\qctrzavala\source\repos\ServicioWebAutorizacionPermisos\ServicioWeb.Datos\bin\Debug\EntityFramework.xml
+C:\Users\qctrzavala\source\repos\ServicioWebAutorizacionPermisos\ServicioWeb.Datos\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\qctrzavala\source\repos\ServicioWebAutorizacionPermisos\ServicioWeb.Datos\obj\Debug\ServicioWeb.Datos.csproj.CoreCompileInputs.cache
+C:\Users\qctrzavala\source\repos\ServicioWebAutorizacionPermisos\ServicioWeb.Datos\obj\Debug\ServicioWeb.Datos.csproj.CopyComplete
+C:\Users\qctrzavala\source\repos\ServicioWebAutorizacionPermisos\ServicioWeb.Datos\obj\Debug\ServicioWeb.Datos.dll
+C:\Users\qctrzavala\source\repos\ServicioWebAutorizacionPermisos\ServicioWeb.Datos\obj\Debug\ServicioWeb.Datos.pdb

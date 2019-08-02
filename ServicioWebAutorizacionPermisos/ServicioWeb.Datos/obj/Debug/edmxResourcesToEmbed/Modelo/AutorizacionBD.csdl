@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PermisosQCTConection" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Permisos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdEmpleado" Type="Int32" Nullable="false" />
+    <Property Name="FechaSalida" Type="String" MaxLength="22" FixedLength="false" Unicode="true" />
+    <Property Name="FechaSalidaReal" Type="String" MaxLength="22" FixedLength="false" Unicode="true" />
+    <Property Name="HoraSalida" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+    <Property Name="HoraSalidaReal" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+    <Property Name="FechaRegreso" Type="String" MaxLength="22" FixedLength="false" Unicode="true" />
+    <Property Name="FechaRegresoReal" Type="String" MaxLength="22" FixedLength="false" Unicode="true" />
+    <Property Name="HoraRegreso" Type="String" MaxLength="17" FixedLength="false" Unicode="true" />
+    <Property Name="HoraRegresoReal" Type="String" MaxLength="17" FixedLength="false" Unicode="true" />
+    <Property Name="Descripcion" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="IdEstado" Type="Int32" Nullable="false" />
+    <Property Name="Numero" Type="Int32" />
+    <Property Name="TipoPermiso" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Motivo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="JefeInmediato" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="PermisosQCTTEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Permisos" EntityType="Self.Permisos" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PermisosQCTConection.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Estados">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="30" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Permisos">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdEmpleado" Type="int" Nullable="false" />
+    <Property Name="FechaSalida" Type="nvarchar" MaxLength="22" />
+    <Property Name="FechaSalidaReal" Type="nvarchar" MaxLength="22" />
+    <Property Name="HoraSalida" Type="nvarchar" MaxLength="13" />
+    <Property Name="HoraSalidaReal" Type="nvarchar" MaxLength="13" />
+    <Property Name="FechaRegreso" Type="nvarchar" MaxLength="22" />
+    <Property Name="FechaRegresoReal" Type="nvarchar" MaxLength="22" />
+    <Property Name="HoraRegreso" Type="nvarchar" MaxLength="17" />
+    <Property Name="HoraRegresoReal" Type="nvarchar" MaxLength="17" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="255" />
+    <Property Name="IdEstado" Type="int" Nullable="false" />
+    <Property Name="Numero" Type="int" />
+    <Property Name="TipoPermiso" Type="varchar" MaxLength="20" />
+    <Property Name="Motivo" Type="varchar" MaxLength="50" />
+    <Property Name="JefeInmediato" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityContainer Name="PermisosQCTConectionStoreContainer">
+    <EntitySet Name="Estados" EntityType="Self.Estados" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Permisos" EntityType="Self.Permisos" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
