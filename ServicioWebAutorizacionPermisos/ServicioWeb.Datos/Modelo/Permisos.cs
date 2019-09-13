@@ -30,5 +30,6 @@ namespace ServicioWeb.Datos.Modelo
         public string TipoPermiso { get; set; }
         public string Motivo { get; set; }
         public string JefeInmediato { get; set; }
+        public string FechaPermiso { get; set; }
     }
 }

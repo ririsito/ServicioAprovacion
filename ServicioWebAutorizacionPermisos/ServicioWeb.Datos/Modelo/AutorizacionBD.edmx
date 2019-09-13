@@ -61,6 +61,7 @@
           <Property Name="TipoPermiso" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Motivo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="JefeInmediato" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FechaPermiso" Type="String" Nullable="false" />
         </EntityType>
         <EntityContainer Name="PermisosQCTTEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Permisos" EntityType="Self.Permisos" />
