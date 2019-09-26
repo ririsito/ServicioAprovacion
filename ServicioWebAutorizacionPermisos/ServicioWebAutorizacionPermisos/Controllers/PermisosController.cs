@@ -107,11 +107,11 @@ namespace ServicioWebAutorizacionPermisos.Controllers
                         }
                         else if (listadoRango[i].TipoPermiso.Equals("Sin Asistencia") && permiso.Motivo.Equals("Personal"))
                         {
-                            listadoKardex.IDEstadoAsis = "F-SGS";
+                            listadoKardex.IDEstadoAsis = "P-SG";
                         }
-                        else if (listadoRango[i].TipoPermiso.Equals("Sin Asistencia") && !permiso.Motivo.Equals("Personal"))
+                        else if (listadoRango[i].TipoPermiso.Equals("Sin Asistencia") && !permiso.Motivo.Equals("Laboral"))
                         {
-                            listadoKardex.IDEstadoAsis = "F-PGS";
+                            listadoKardex.IDEstadoAsis = "P-CG";
                         }
                         else if (listadoRango[i].TipoPermiso.Equals("Incapacidad"))
                         {
