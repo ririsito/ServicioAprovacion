@@ -99,7 +99,7 @@ namespace ServicioWebAutorizacionPermisos.Controllers
                         String fechasPermisos = parsedDate.ToString("dd/M/yyyy");
 
 
-                        Permisos Permiso = BD.Permisos.Single(x => x.Id == Idpermiso);
+                        
                         Kardex listadoKardex = BD.Kardex.FirstOrDefault(x=> x.NumeroEmpleado == permisosNumeros && x.Fecha.Equals(fechasPermisos) );
                         if (listadoRango[i].TipoPermiso.Equals("Vacaciones"))
                         {
@@ -121,9 +121,9 @@ namespace ServicioWebAutorizacionPermisos.Controllers
                         {
                             listadoKardex.IDEstadoAsis = "F-PGS";
                         }
-                        var newKardex = listadoKardex;
 
-                         BD.SaveChanges();
+                        UpdateKardex(listadoKardex);
+
                     }
                 }
 
@@ -133,6 +133,29 @@ namespace ServicioWebAutorizacionPermisos.Controllers
             //fin 
 
 
+
+        }
+
+        public void UpdateKardex(Kardex kar)
+        {
+            var dbContextTransaction = BD.Database.BeginTransaction();
+            try
+            {
+
+                var karoriginal = BD.Kardex.Find(kar.IdKardex);
+                if (karoriginal != null)
+                {
+                    BD.Entry(karoriginal).CurrentValues.SetValues(kar);
+                    BD.SaveChanges();
+                    dbContextTransaction.Commit();
+                }
+            }
+            catch (Exception e)
+            {
+                dbContextTransaction.Rollback();
+            }
+        
+        
 
         }
 
