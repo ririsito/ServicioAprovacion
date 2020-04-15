@@ -9,7 +9,7 @@ using System.Web.Http;
 namespace ServicioWebAutorizacionPermisos.Controllers
 {
 
-  
+
     public class PermisosController : ApiController
     {
         //PermisosQCTTEntities BD = new PermisosQCTTEntities();
@@ -17,14 +17,14 @@ namespace ServicioWebAutorizacionPermisos.Controllers
         Kardex kardex = new Kardex();
         public IEnumerable<Permisos> Get()
         {
-            var listado=BD.Permisos.ToList();
+            var listado = BD.Permisos.ToList();
             return listado;
         }
 
         public IEnumerable<Permisos> GetByID(int Id)
         {
             var listado = BD.Permisos
-                .Where(x=>x.Id==Id)
+                .Where(x => x.Id == Id)
                 .ToList();
             return listado;
         }
@@ -36,12 +36,17 @@ namespace ServicioWebAutorizacionPermisos.Controllers
             Permiso.IdEstado = IdEstado;
             BD.SaveChanges();
             updateRangoFechas(Permiso, IdEstado);
-            PostUpdateKardex(Permiso);
+
+            if (IdEstado == 2)
+            {
+                PostUpdateKardex(Permiso);
+            }
+
         }
         //update vacaciones
         public void updateRangoFechas(Permisos permiso, int IdEstado)
         {
-            
+
             var desc = permiso.Descripcion;
             var numero = permiso.Numero;
             var fechaFinal = permiso.FechaRegreso;
@@ -49,14 +54,14 @@ namespace ServicioWebAutorizacionPermisos.Controllers
             var horaSalida = permiso.HoraSalida;
             var listado = BD.Permisos.ToList();
 
-            if (tipoPermiso.Equals("Vacaciones") || tipoPermiso.Equals("Salida y Regreso")|| 
-                tipoPermiso.Equals("Incapacidad")||tipoPermiso.Equals("Sin Asistencia"))
+            if (tipoPermiso.Equals("Vacaciones") || tipoPermiso.Equals("Salida y Regreso") ||
+                tipoPermiso.Equals("Incapacidad") || tipoPermiso.Equals("Sin Asistencia"))
             {
 
-                var listadoRango = listado.Where(x => x.Numero == numero && x.Descripcion == desc 
-                && x.FechaRegreso == fechaFinal && x.TipoPermiso ==tipoPermiso && x.HoraSalida== horaSalida).ToList();
+                var listadoRango = listado.Where(x => x.Numero == numero && x.Descripcion == desc
+                && x.FechaRegreso == fechaFinal && x.TipoPermiso == tipoPermiso && x.HoraSalida == horaSalida).ToList();
                 for (int i = 0; i < listadoRango.Count; i++)
-                {                    
+                {
                     var Idpermiso = listadoRango[i].Id;
                     Permisos Permiso = BD.Permisos.Single(x => x.Id == Idpermiso);
                     Permiso.IdEstado = IdEstado;
@@ -74,7 +79,7 @@ namespace ServicioWebAutorizacionPermisos.Controllers
             String fechaSalida = permisoDate.ToString("dd/M/yyyy");
             var desc = permiso.Descripcion;
             var numero = permiso.Numero;
-            var fechaFinal = permiso.FechaRegreso;           
+            var fechaFinal = permiso.FechaRegreso;
             var tipoPermiso = permiso.TipoPermiso;
             var horaSalida = permiso.HoraSalida;
             var listadok = BD.Kardex.ToList();
@@ -82,7 +87,7 @@ namespace ServicioWebAutorizacionPermisos.Controllers
 
             if (permisoDate < creacionDate)
             {
-                
+
 
                 if (tipoPermiso.Equals("Vacaciones") || tipoPermiso.Equals("Salida y Regreso") ||
                     tipoPermiso.Equals("Incapacidad") || tipoPermiso.Equals("Sin Asistencia"))
@@ -99,31 +104,34 @@ namespace ServicioWebAutorizacionPermisos.Controllers
                         String fechasPermisos = parsedDate.ToString("dd/M/yyyy");
 
 
-                        
-                        Kardex listadoKardex = BD.Kardex.FirstOrDefault(x=> x.NumeroEmpleado == permisosNumeros && x.Fecha.Equals(fechasPermisos) );
-                        if (listadoRango[i].TipoPermiso.Equals("Vacaciones"))
-                        {
-                            listadoKardex.IDEstadoAsis = "V";
-                        }
-                        else if (listadoRango[i].TipoPermiso.Equals("Sin Asistencia") && permiso.Motivo.Equals("Personal"))
-                        {
-                            listadoKardex.IDEstadoAsis = "P-SG";
-                        }
-                        else if (listadoRango[i].TipoPermiso.Equals("Sin Asistencia") && !permiso.Motivo.Equals("Laboral"))
-                        {
-                            listadoKardex.IDEstadoAsis = "P-CG";
-                        }
-                        else if (listadoRango[i].TipoPermiso.Equals("Incapacidad"))
-                        {
-                            listadoKardex.IDEstadoAsis = "F-PGS";
-                        }
-                        else if (listadoRango[i].TipoPermiso.Equals("Tiempo por Tiempo"))
-                        {
-                            listadoKardex.IDEstadoAsis = "F-PGS";
-                        }
 
-                        UpdateKardex(listadoKardex);
+                        Kardex listadoKardex = BD.Kardex.FirstOrDefault(x => x.NumeroEmpleado == permisosNumeros && x.Fecha.Equals(fechasPermisos));
 
+                        if (listadoKardex != null)
+                        {
+                            if (listadoRango[i].TipoPermiso.Equals("Vacaciones"))
+                            {
+                                listadoKardex.IDEstadoAsis = "V";
+                            }
+                            else if (listadoRango[i].TipoPermiso.Equals("Sin Asistencia") && permiso.Motivo.Equals("Personal"))
+                            {
+                                listadoKardex.IDEstadoAsis = "P-SG";
+                            }
+                            else if (listadoRango[i].TipoPermiso.Equals("Sin Asistencia") && permiso.Motivo.Equals("Laboral"))
+                            {
+                                listadoKardex.IDEstadoAsis = "P-CG";
+                            }
+                            else if (listadoRango[i].TipoPermiso.Equals("Incapacidad"))
+                            {
+                                listadoKardex.IDEstadoAsis = "F-PGS";
+                            }
+                            else if (listadoRango[i].TipoPermiso.Equals("Tiempo por Tiempo"))
+                            {
+                                listadoKardex.IDEstadoAsis = "F-PGS";
+                            }
+
+                            UpdateKardex(listadoKardex);
+                        }
                     }
                 }
 
@@ -154,8 +162,8 @@ namespace ServicioWebAutorizacionPermisos.Controllers
             {
                 dbContextTransaction.Rollback();
             }
-        
-        
+
+
 
         }
 
